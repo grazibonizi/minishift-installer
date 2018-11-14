@@ -16,3 +16,4 @@ mv $minishiftdir/minishift-1.27.0-linux-amd64/* $minishiftdir/
 rm -rf $minishiftdir/minishift-1.27.0-linux-amd64
 rm -rf $minishiftdir/minishift.tgz
 echo "export PATH=$PATH:$minishiftdir" > /etc/profile.d/minishiftvars.sh
+print 'Minishift installed succesfully. Re-logon for applying the changes'
