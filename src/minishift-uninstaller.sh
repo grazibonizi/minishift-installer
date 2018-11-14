@@ -3,16 +3,16 @@
 rm -rf /usr/bin/minishift
 if [ $? == 0 ]
 then
-    print 'Cleaned installation directory...'
+    echo 'Cleaned installation directory...'
     rm -rf /etc/profile.d/minishiftvars.sh
     if [ $? == 0 ]
     then
-        print 'Removed environment variables...'
-        print 'Minishift uninstalled succesfully. Re-logon for applying the changes'
+        echo 'Removed environment variables...'
+        echo 'Minishift uninstalled succesfully. Re-logon for applying the changes'
     else
-        print 'Failed to remove environment variables...'
-        print 'Minishift uninstalled with errors.'
+        echo 'Failed to remove environment variables...'
+        echo 'Minishift uninstalled with errors.'
     fi
 else
-    print 'Failed to uninstall Minishift.'
+    echo 'Failed to uninstall Minishift.'
 fi
