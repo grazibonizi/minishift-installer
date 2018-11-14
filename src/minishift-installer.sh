@@ -1,9 +1,18 @@
 #!/bin/bash
 
-sudo mkdir minishift
-sudo wget -O /usr/bin/minishift/minishift.tgz "https://github.com/minishift/minishift/releases/download/v1.27.0/minishift-1.27.0-linux-amd64.tgz"
-sudo tar xvzf minishift.tgz
-sudo mv minishift-1.27.0-linux-amd64/* ./ 
-sudo rm -rf minishift-1.27.0-linux-amd64
-sudo rm -rf minishift.tgz
-export PATH="$PATH:/usr/bin/minishift/"
+minishiftcurrentversion=$(minishift version | awk '{print $2}')
+
+if [ ${#minishiftcurrentversion} > 0 ]
+then
+    echo "Minishift is already installed. Version: " + $minishiftcurrentversion
+    exit 1
+fi
+
+minishiftdir=/usr/bin/minishift
+mkdir $minishiftdir
+wget -O $minishiftdir/minishift.tgz "https://github.com/minishift/minishift/releases/download/v1.27.0/minishift-1.27.0-linux-amd64.tgz"
+tar xvzf $minishiftdir/minishift.tgz -C $minishiftdir/
+mv $minishiftdir/minishift-1.27.0-linux-amd64/* $minishiftdir/
+rm -rf $minishiftdir/minishift-1.27.0-linux-amd64
+rm -rf $minishiftdir/minishift.tgz
+echo "PATH=$PATH:$minishiftdir" >> ~/.profile
