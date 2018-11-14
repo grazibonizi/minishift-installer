@@ -7,4 +7,4 @@ Script for installing minishift on a Linux AMD 64 machine
 3. Set directory on PATH environment variable
 
 ## Aditional info
-It's necessary to logoff and logon in order to the changes take effect
+It's necessary to re-logon in order to the changes take effect
