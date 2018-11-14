@@ -1,7 +1,4 @@
 #!/bin/bash
 
-minishiftdir=/usr/bin/minishift
-
-rm -rf $minishiftdir
-
-PATH=`echo $PATH | sed -e 's/:$minishiftdir$//'`
+rm -rf /usr/bin/minishift
+rm -rf /etc/profile.d/minishiftvars.sh

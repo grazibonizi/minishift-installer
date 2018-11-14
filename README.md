@@ -1,5 +1,5 @@
 # minishift-installer
-Script for installing minishift on a Linux AMD 64 machine
+Script for installing or uninstalling minishift on a Linux AMD 64 machine
 
 ## Steps
 1. Download minishift 1.27.0
